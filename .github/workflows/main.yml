@@ -20,4 +20,5 @@ jobs:
       - name: Run Bot
         env:
           HIGHRISE_API_TOKEN: F3f72b7929ffbaca61165d5e76e654c2c4dd8f2b01a15b032d811c83a74f9948
+          HIGHRISE_ROOM_ID: 6894bd39e3e4a405517cb530
         run: python main.py
