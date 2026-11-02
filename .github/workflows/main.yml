@@ -1,0 +1,23 @@
+name: Run TUP1M Bot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Run Bot
+        env:
+          HIGHRISE_API_TOKEN: F3f72b7929ffbaca61165d5e76e654c2c4dd8f2b01a15b032d811c83a74f9948
+        run: python main.py
